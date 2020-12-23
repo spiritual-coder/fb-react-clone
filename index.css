@@ -1,0 +1,77 @@
+@import "https://fonts.googleapis.com/css?family=Lato:400,700";
+
+html {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: "Lato", sans-serif;
+  background: #181919;
+}
+
+/* Container */
+
+.container {
+  margin: 20px;
+  max-width: 100%;
+  height: 600px;
+  background: #181919;
+}
+
+.navigationBar {
+  height: 40px;
+  border: 2px solid #fff;
+  color: #d3d3d3;
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.mainContent {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+}
+
+.leftSidebar {
+  display: flex;
+  flex: 25%;
+  height: 100%;
+  border: 2px solid #fff;
+  color: #d3d3d3;
+  text-align: center;
+  font-size: 2.4rem;
+  width: 100%;
+  padding: 8px;
+}
+
+.centerContent {
+  display: flex;
+  flex: 50%;
+  height: 100%;
+  border: 2px solid #fff;
+  color: #d3d3d3;
+  text-align: center;
+  font-size: 2.4rem;
+  width: 100%;
+  padding: 8px;
+}
+
+.rightSidebar {
+  display: flex;
+  flex: 25%;
+  height: 100%;
+  border: 2px solid #fff;
+  color: #d3d3d3;
+  text-align: center;
+  font-size: 2.4rem;
+  width: 100%;
+  padding: 8px;
+}
