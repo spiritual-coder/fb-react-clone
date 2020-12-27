@@ -25,3 +25,7 @@ Available in the *master* branch
 ### Day 2 (24 Dec 2020 - Thursday):
 
 ![Screenshot 1](Screenshots/Ss3.png)
+
+### Day 3 (26 Dec 2020 - Saturday):
+
+![Screenshot 2](Screenshots/Ss4.png)
