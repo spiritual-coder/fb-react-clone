@@ -29,13 +29,26 @@ class RightBar extends Component {
                 <h2>Birthdays</h2>
               </div>
             </header>
+            <div className="notificationContent">
+              <img
+                alt="giftimg"
+                src="https://raw.githubusercontent.com/spiritual-coder/fb-react-clone/main/assets/icons/22.png"
+              />
+              <h3>
+                <span>Vikram and 3 others</span> have birthdays today
+              </h3>
+            </div>
           </div>
           <div className="contacts">
             <header>
               <div className="headerTitle">
                 <h2>Contacts</h2>
               </div>
-              <div className="headerIcons"></div>
+              <div className="headerIcons">
+                <i className="fa fa-video-camera" aria-hidden="true"></i>
+                <i className="fa fa-search" aria-hidden="true"></i>
+                <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
+              </div>
             </header>
             <div>
               {this.state.onlineList.map(
