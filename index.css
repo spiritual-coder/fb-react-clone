@@ -19,11 +19,15 @@ body {
 /* Container */
 
 .container {
+  position: relative;
   margin: 20px;
   max-width: 100%;
-  height: 660px;
   background: #18191a;
 }
+
+/* Container divided into two sections viz. - navigation bar and main content*/
+
+/* Navigation Bar */
 
 .navigationBar {
   border: 1px solid #fff;
@@ -33,9 +37,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 6px;
+  padding: 0 6px;
   background: #242526;
+  flex-shrink: initial;
 }
+
+/* left nav icons */
 
 .leftNavigation {
   display: flex;
@@ -50,7 +57,7 @@ body {
 }
 
 .input {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: normal;
   padding: 1rem 2rem;
   border-radius: 21px;
@@ -60,98 +67,15 @@ body {
   border: none;
   background: #3a3b3c;
   color: #d3d3d3;
-}
-
-.mainContent {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #fff;
-}
-
-.leftSidebar {
-  flex: 25%;
-  height: 100%;
-  border: 1px solid #fff;
-  color: #d3d3d3;
-  text-align: center;
-  font-size: 1.2rem;
-  width: 100%;
-  padding: 8px;
-}
-
-.centerContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex: 50%;
-  height: 100%;
-  border: 1px solid #fff;
-  color: #d3d3d3;
-  text-align: center;
-  font-size: 1.4rem;
-  width: 100%;
-  padding: 8px;
-}
-
-.rightSidebar {
-  flex: 25%;
-  height: 100%;
-  border: 1px solid #fff;
-  color: #d3d3d3;
-  text-align: center;
-  font-size: 1.2rem;
-  width: 100%;
-  padding: 8px;
-}
-
-.notifications {
-  border-bottom: 1px solid #616161;
-}
-
-.headerTitle h2 {
-  font-size: 1.5rem;
-  text-align: left;
-}
-
-.navigationList {
-  border-bottom: 1px solid #616161;
-}
-
-.contactBand,
-.itemSet {
-  display: flex;
-  margin: 6px;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.contactBand .contactImg img {
-  width: 33px;
-  height: 33px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.itemSet .itemImg img {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
-}
-
-.itemSet .itemNm h3 {
-  font-size: 1.5rem;
-}
-
-.contactBand .contactNm h3 {
-  font-size: 1.3rem;
+  font-family: Arial, FontAwesome;
 }
 
 .centreNavigation {
   flex: 50%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-shrink: initial;
 }
 
 .iconList {
@@ -159,6 +83,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: initial;
   width: 460px;
 }
 
@@ -168,25 +93,37 @@ body {
   cursor: pointer;
 }
 
+.menuIcon img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: none;
+}
+
 .navigationButton img {
+  position: relative;
   width: 30px;
   height: 30px;
   cursor: pointer;
 }
 
 .buttonList {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 180px;
   margin: 0 10px;
+  flex-shrink: initial;
 }
 
 .rightNavigation {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   flex: 25%;
+  min-width: 0;
 }
 
 .profile {
@@ -202,16 +139,176 @@ body {
   height: 30px;
   cursor: pointer;
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .profileName h3 {
   font-size: 1.4rem;
   color: #fff;
+  cursor: pointer;
 }
 
+/* Main Content Section sans navigation bar */
+
+/* Main Content divided into three parts viz. - left sidebar, center and right sidebar */
+
+.mainContent {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+}
+
+/* Left Sidebar */
+
+.leftSidebar {
+  flex: 25%;
+  height: 100%;
+  color: #d3d3d3;
+  text-align: left;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 8px;
+}
+
+/* Center Content */
+
+.centerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 50%;
+  height: 100%;
+  color: #d3d3d3;
+  text-align: center;
+  font-size: 1.4rem;
+  width: 100%;
+  padding: 8px;
+}
+
+/* Right Side Bar */
+
+.rightSidebar {
+  flex: 25%;
+  height: 100%;
+  color: #d3d3d3;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 8px;
+}
+
+.notifications {
+  border-bottom: 1px solid #616161;
+}
+
+.notificationContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-shrink: initial;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.notificationContent img {
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.notificationContent h3 {
+  text-align: left;
+  color: #fff;
+  font-weight: normal;
+  font-size: 1.4rem;
+  padding: 10px;
+}
+
+.notificationContent h3 span {
+  font-weight: bold;
+}
+
+.headerTitle h2 {
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.navigationList {
+  border-bottom: 1px solid #616161;
+}
+
+.contacts header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-shrink: initial;
+}
+
+.headerIcons {
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.headerIcons i {
+  font-size: 1.4rem;
+  color: #d3d3d3;
+}
+
+.contactBand,
+.itemSet {
+  display: flex;
+  margin: 6px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contactBand .contactImg img {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.itemSet .itemImg img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.itemSet .itemNm h3 {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.contactBand .contactNm h3 {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.onlineDot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  background: #31a24c;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  transform: translate(33px, 1px);
+}
+
+/* Add Post Box */
+
 .addPost {
-  width: 600px;
-  min-height: 100px;
+  margin: 12px;
+  width: 540px;
+  min-height: 120px;
   border-radius: 15px;
   box-shadow: 10px 10px 13px #fff7ff -10px -10px 13px #0002;
   background: #242526;
@@ -225,67 +322,300 @@ form {
   flex-direction: column;
 }
 
+.postRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 form input {
-  width: 300px;
-  height: 100%;
-  border: none;
+  font-size: 1.5rem;
+  font-weight: normal;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  width: 450px;
+  max-width: 100%;
   outline: none;
-  border-radius: 5px;
-  padding: 4px 5px;
+  border: none;
   background: #3a3b3c;
-  margin: 4px;
+  color: #d3d3d3;
+}
+
+.postButton {
+  display: flex;
+  justify-content: flex-end;
 }
 
 form button {
-  width: 60px;
+  margin: 15px 45px;
+  width: 120px;
+  padding: 0.8rem;
   letter-spacing: 2px;
   cursor: pointer;
   border: none;
+  border-radius: 4px;
   outline: none;
   background: dodgerblue;
   color: #fff;
 }
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Post card design */
 
 .postCard {
   display: flex;
   flex-direction: column;
   background: #242526;
   max-height: 200px;
-  width: 600px;
+  width: 540px;
   margin: 20px;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 8px;
 }
 
 .postHead {
   display: flex;
+  align-items: center;
   flex-direction: row;
   color: #fff;
+}
+
+.threeDots {
+  color: #616161;
+  margin: 0 8px 0 auto;
+  font-size: 1.6rem;
 }
 
 .postContent p {
   color: #fff;
   text-align: left;
+  padding: 10px;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+}
+
+/* Story Card Design */
+
+.storyList {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 12px;
+}
+
+.storyCard {
+  position: relative;
+  width: 105px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 20px 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.storyCard .storyContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.storyCard:hover {
+  transform: translateY(-20px);
+}
+
+.storyCard:hover .storyContent {
+  opacity: 1;
+}
+
+.storyImg {
+  border: 4px solid rgba(0, 0, 0, 0.25);
+  width: 105px;
+  height: 180px;
+  border-radius: 12px;
+}
+
+.storyImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.storyProfile {
+  position: relative;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
+}
+
+.storyProfile img {
+  object-fit: cover;
 }
 
 /* For Tablets, Ipads (in landscape mode) */
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 872px) and (max-width: 1024px) {
   .leftSidebar {
+    display: none;
+    flex: 0%;
+  }
+
+  .menuIcon {
+    display: inherit;
+    margin-left: 30px;
+  }
+
+  .rightSidebar {
+    flex: 25%;
+  }
+
+  .centerContent {
+    flex: 75%;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .iconList {
+    min-width: 200px;
+    max-width: 360px;
+  }
+}
+
+@media (min-width: 872px) and (max-width: 1125px) {
+  .profile {
     display: none;
   }
 }
 
 /* For mobile phone screens (portrait mode) */
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 871px) {
   .rightSidebar,
   .leftSidebar {
     display: none;
   }
 
+  form.form {
+    width: 33px;
+    height: 33px;
+  }
+
   .input {
     width: 33px;
     border-radius: 50%;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .iconList {
+    display: none;
+  }
+
+  .leftNavigation {
+    flex: 30%;
+  }
+
+  .centreNavigation {
+    flex: 10%;
+  }
+
+  .rightNavigation {
+    flex: 50%;
+  }
+
+  .buttonList {
+    width: 100%;
+  }
+
+  .leftNavigation .facebookLogo img {
+    width: 33px;
+    height: 33px;
+  }
+
+  .addPost {
+    width: 280px;
+  }
+
+  .addPost form input {
+    width: 200px;
+    font-size: 1.1rem;
+  }
+
+  .addPost form button {
+    width: 80px;
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+
+  .postCard {
+    width: 280px;
+  }
+
+  .input {
+    width: 33px;
+    height: 33px;
+    padding: 1rem;
+  }
+
+  .storyCard {
+    width: 50px;
+    height: 80px;
+  }
+
+  .storyImg {
+    width: 50px;
+    height: 80px;
+  }
+}
+
+@media (min-width: 572px) and (max-width: 871px) {
+  .postCard {
+    width: 460px;
+  }
+
+  .addPost {
+    width: 460px;
+  }
+
+  .storyCard {
+    width: 70px;
+    height: 120px;
+  }
+
+  .storyImg {
+    width: 70px;
+    height: 120px;
+  }
+
+  .buttonList {
+    max-width: 300px;
+  }
+
+  .leftNavigation {
+    max-width: 180px;
   }
 }
