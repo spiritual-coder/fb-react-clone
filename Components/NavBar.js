@@ -48,7 +48,7 @@ class NavBar extends Component {
                   className="input"
                   type="text"
                   name="query"
-                  placeholder="Search Facebook"
+                  placeholder="&#xF002; Search Facebook"
                 />
               </form>
             </div>
@@ -58,6 +58,12 @@ class NavBar extends Component {
               {this.state.iconList.map(({ icon, iconId }) => (
                 <NavIcons icon={icon} key={iconId} />
               ))}
+            </div>
+            <div className="menuIcon">
+              <img
+                alt="menuImg."
+                src="https://raw.githubusercontent.com/spiritual-coder/fb-react-clone/main/assets/icons/5.png"
+              />
             </div>
           </div>
           <div className="rightNavigation">
