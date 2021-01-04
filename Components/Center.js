@@ -1,13 +1,28 @@
 import React, { Component } from "react";
 import Form from "./Form.js";
+import StoryForm from "./StoryForm.js";
 import StoryList from "./StoryList.js";
 import PostList from "./PostList.js";
 
 class Center extends Component {
   state = {
     data: [
-      { topost: "I am learning Data Structures." },
-      { topost: "My First Post" },
+      {
+        text: "Happy New Year!",
+        image:
+          "https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      },
+    ],
+
+    story: [
+      {
+        toadd:
+          "https://images.pexels.com/photos/5627494/pexels-photo-5627494.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      },
+      {
+        toadd:
+          "https://images.pexels.com/photos/4131522/pexels-photo-4131522.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      },
     ],
   };
 
@@ -15,10 +30,15 @@ class Center extends Component {
     this.setState({ data: [...this.state.data, newVal] });
   };
 
+  handleSubmitValue = (newValue) => {
+    this.setState({ story: [...this.state.story, newValue] });
+  };
+
   //localStorage
 
   componentDidUpdate() {
     localStorage.setItem("dataStore", JSON.stringify(this.state.data));
+    localStorage.setItem("storyStore", JSON.stringify(this.state.story));
   }
 
   componentDidMount() {
@@ -26,16 +46,24 @@ class Center extends Component {
     if (dataStore !== null) {
       this.setState({ data: dataStore });
     }
+    const storyStore = JSON.parse(localStorage.getItem("storyStore"));
+    if (storyStore !== null) {
+      this.setState({ story: storyStore });
+    }
   }
 
   render() {
-    const { data } = this.state;
+    const { data, story } = this.state;
     return (
       <>
         <div className="centerContent">
-          <StoryList />
+          <div className="storyTab">
+            <StoryForm onSubmit={this.handleSubmitValue} />
+            <StoryList toadd={story} />
+          </div>
+
           <Form onSubmit={this.handleSubmit} />
-          <PostList topost={data} />
+          <PostList passit={data} />
         </div>
       </>
     );
