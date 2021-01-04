@@ -9,6 +9,15 @@ https://facebook-react-clone.netlify.app/
 Available in the *master* branch
 
 
+### Concepts Used:
+- React Class Components
+- React Lifecycle Methods (componentDidMount, componentDidUpdate)
+- Custom API
+- React LocalStorage Concepts
+- Controlled Forms
+- Passing State data in Child components
+
+
 ### Day 1 (23 Dec 2020 - Wednesday):
 
 - Started working on the new assignment
@@ -29,3 +38,8 @@ Available in the *master* branch
 ### Day 3 (26 Dec 2020 - Saturday):
 
 ![Screenshot 2](Screenshots/Ss4.png)
+
+
+### Last Update:
+
+![Screenshot 3](Screenshots/Ss4.png)
